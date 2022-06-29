@@ -14,23 +14,24 @@
  *
  * TODO: ARM equivalent
  */
-fun parseFormat1(instruction: Int): String {
-    val op = instruction.getBits(11, 0b11)
+object Format1 : Format {
+    override fun parse(instruction: Int): String {
+        val op = instruction.getBits(11, 0b11)
+        require(op != 0b11) {
+            "invalid opcode, must be 0 - LSL, 1 - LSR, or 2 - ASR"
+        }
 
-    require(op != 0b11) {
-        "invalid opcode, must be 0 - LSL, 1 - LSR, or 2 - ASR"
+        val offset5 = instruction.getBits(6, 0b11111)
+        val s = instruction.getBits(3, 0b111)
+        val d = instruction.getBits(0, 0b111)
+
+        val opType = when (op) {
+            0b00 -> "LSL"
+            0b01 -> "LSR"
+            0b10 -> "ASR"
+            else -> error("unreachable")
+        }
+
+        return "$opType R$d, R$s, #${offset5}"
     }
-
-    val offset5 = instruction.getBits(6, 0b11111)
-    val s = instruction.getBits(3, 0b111)
-    val d = instruction.getBits(0, 0b111)
-
-    val opType = when (op) {
-        0b00 -> "LSL"
-        0b01 -> "LSR"
-        0b10 -> "ASR"
-        else -> error("unreachable")
-    }
-
-    return "$opType R$d, R$s, #${offset5}"
 }

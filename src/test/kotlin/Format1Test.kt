@@ -1,7 +1,6 @@
 import org.junit.jupiter.api.Test
 
-class Format1 {
-
+class Format1Test {
     @Test
     fun `parsing a format 1 instruction`() {
         val cases = listOf(
@@ -14,9 +13,11 @@ class Format1 {
         )
 
         for ((instruction, expected) in cases) {
-            val actual = parseFormat1(instruction)
+            val actual = Format1.parse(instruction)
             assert(actual == expected) {
-                "failed to parse instruction to format-1 0b${instruction.toString(2).padStart(16, '0').chunked(4).joinToString("_")}, expected $expected but got $actual"
+                "failed to parse instruction to format-1 0b${
+                    instruction.toString(2).padStart(16, '0').chunked(4).joinToString("_")
+                }, expected $expected but got $actual"
             }
         }
     }

@@ -11,12 +11,22 @@ fun main() {
 
     val format = parseThumbInstructionFormat(instruction)
     val formattedInstruction = when (format) {
-        1 -> parseFormat1(instruction)
+        1 -> Format1.parse(instruction)
+        2 -> Format2.parse(instruction)
+        3 -> Format3.parse(instruction)
+        4 -> Format4.parse(instruction)
+        5 -> Format5.parse(instruction)
+        6 -> Format6.parse(instruction)
+        7 -> Format7.parse(instruction)
+        8 -> Format8.parse(instruction)
+        9 -> Format9.parse(instruction)
         else -> ""
     }
 
-    println("""
+    println(
+        """
         Parsed instruction(s): 
         0x${instruction.toString(16).padStart(4, '0').uppercase()}: $formattedInstruction
-    """.trimIndent())
+    """.trimIndent()
+    )
 }

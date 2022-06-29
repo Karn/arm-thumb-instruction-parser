@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Format1" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-06-29T07:49:27" hostname="Karns-MBP-14.cgocable.net" time="0.043">
-  <properties/>
-  <testcase name="parsing()" classname="Format1" time="0.043"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
