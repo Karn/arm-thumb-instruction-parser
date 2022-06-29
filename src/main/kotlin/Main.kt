@@ -9,5 +9,14 @@ fun main() {
         error("unable to convert arg to hex -- $arg")
     }
 
-    println("Hello world: ${parseThumbInstructionFormat(instruction)}")
+    val format = parseThumbInstructionFormat(instruction)
+    val formattedInstruction = when (format) {
+        1 -> parseFormat1(instruction)
+        else -> ""
+    }
+
+    println("""
+        Parsed instruction(s): 
+        0x${instruction.toString(16).padStart(4, '0').uppercase()}: $formattedInstruction
+    """.trimIndent())
 }

@@ -8,6 +8,7 @@ fun parseThumbInstructionFormat(instruction: Int): Int {
     val opCode = instruction shr 13
 
     // Fork on the opCode
+    // TODO: Is a regex easier to understand?
     return when (opCode) {
         // 1, 2
         0b000 -> if (instruction.getBits(11, 0b11) == 0b11) 2 else 1
@@ -61,6 +62,3 @@ fun parseThumbInstructionFormat(instruction: Int): Int {
     }
 }
 
-private inline fun Int.getBits(rtlPosition: Int, rtlSize: Int = 0b1): Int {
-    return (this shr rtlPosition) and rtlSize
-}
