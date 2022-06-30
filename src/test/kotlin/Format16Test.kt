@@ -6,7 +6,7 @@ class Format16Test {
     fun `parsing a format 16 instruction`() {
         val cases = listOf(
             0b1101_0000_00000000 to "BEQ #1",
-            0b1101_0000_00000100 to "BEQ #5",
+            0b1101_0000_00000100 to "BEQ #9",
             0b1101_0001_00000000 to "BNE #1",
             0b1101_0010_00000000 to "BCS #1",
             0b1101_0011_00000000 to "BCC #1",

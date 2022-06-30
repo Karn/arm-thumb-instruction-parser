@@ -9,6 +9,7 @@ fun parseThumbInstructionFormat(instruction: Int): Int {
 
     // Fork on the opCode
     // TODO: Is a regex easier to understand?
+    // TODO: We can actually use a mask + xor
     return when (opCode) {
         // 1, 2
         0b000 -> if (instruction.getBits(11, 0b11) == 0b11) 2 else 1

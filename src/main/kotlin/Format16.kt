@@ -25,6 +25,7 @@ object Format16 : Format {
             else -> error("unreachable")
         }
 
+        // TODO: This might be wrong -- (sOffset8 shl 1) or 1
         return "$opType #${sOffset8 + 1}" // PC + 1 (prefetch) + sOffset8
     }
 }
