@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Format16Test" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-06-30T04:12:28" hostname="Karns-MBP-14.cgocable.net" time="0.053">
+  <properties/>
+  <testcase name="parsing a format 16 instruction()" classname="Format16Test" time="0.053"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,7 +1,9 @@
+
+// TODO: Parse chunks, ensure twos complement.
 fun main() {
     // Parse an incoming HEX string into the corresponding THUMB Instruction
     // Ref: http://bear.ces.cwru.edu/eecs_382/ARM7-TDMI-manual-pt3.pdf
-    val arg = "E1FE"
+    val arg = "D00B"
 
     val instruction = try {
         Integer.parseInt(arg, 16)
@@ -20,13 +22,20 @@ fun main() {
         7 -> Format7.parse(instruction)
         8 -> Format8.parse(instruction)
         9 -> Format9.parse(instruction)
+        10 -> Format10.parse(instruction)
+        11 -> Format11.parse(instruction)
+        12 -> Format12.parse(instruction)
+        13 -> Format13.parse(instruction)
+        14 -> Format14.parse(instruction)
+        15 -> Format15.parse(instruction)
+        16 -> Format16.parse(instruction)
         else -> ""
     }
 
     println(
         """
         Parsed instruction(s): 
-        0x${instruction.toString(16).padStart(4, '0').uppercase()}: $formattedInstruction
+        0x${instruction.toString(16).padStart(4, '0').uppercase()}    $formattedInstruction
     """.trimIndent()
     )
 }

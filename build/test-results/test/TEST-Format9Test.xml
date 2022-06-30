@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Format9Test" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-06-29T23:49:53" hostname="Karns-MBP-14.cgocable.net" time="0.046">
-  <properties/>
-  <testcase name="parsing a format 9 instruction()" classname="Format9Test" time="0.046"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
